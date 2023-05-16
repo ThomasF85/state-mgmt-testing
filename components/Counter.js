@@ -11,22 +11,12 @@ const Container = styled.div`
 `;
 
 export default function Counter() {
-  const [count, setCount] = useState(0);
-
-  function increment(delta) {
-    setCount((prev) => prev + delta);
-  }
-
-  function decrement(delta) {
-    setCount((prev) => (prev - delta < 0 ? 0 : prev - delta));
-  }
-
   return (
     <Container>
-      <CounterValue value={count} />
-      <CounterButtons delta={1} increment={increment} decrement={decrement} />
-      <CounterButtons delta={5} increment={increment} decrement={decrement} />
-      <CounterButtons delta={10} increment={increment} decrement={decrement} />
+      <CounterValue />
+      <CounterButtons delta={1} />
+      <CounterButtons delta={5} />
+      <CounterButtons delta={10} />
     </Container>
   );
 }

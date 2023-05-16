@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useSetAtom } from "jotai";
+import { countAtom, decrement, increment } from "@/lib/atoms/count";
 
 const Container = styled.div`
   display: flex;
@@ -13,13 +15,15 @@ const Button = styled.button`
   color: white;
 `;
 
-export default function CounterButtons({ delta, increment, decrement }) {
+export default function CounterButtons({ delta }) {
+  const dispatch = useSetAtom(countAtom);
+
   return (
     <Container>
-      <Button type="button" onClick={() => decrement(delta)}>
+      <Button type="button" onClick={() => dispatch(decrement(delta))}>
         - {delta}
       </Button>
-      <Button type="button" onClick={() => increment(delta)}>
+      <Button type="button" onClick={() => dispatch(increment(delta))}>
         + {delta}
       </Button>
     </Container>

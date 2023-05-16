@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useAtomValue } from "jotai";
+import { countAtom } from "@/lib/atoms/count";
 
 const Value = styled.p`
   background-color: var(--color-primary);
@@ -10,6 +12,8 @@ const Value = styled.p`
   border-radius: 50%;
 `;
 
-export default function CounterValue({ value }) {
+export default function CounterValue() {
+  const value = useAtomValue(countAtom);
+
   return <Value>Value: {value}</Value>;
 }

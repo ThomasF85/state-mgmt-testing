@@ -1,3 +1,5 @@
+import { CountApiContext } from "@/lib/countContext";
+import { useContext } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -13,7 +15,9 @@ const Button = styled.button`
   color: white;
 `;
 
-export default function CounterButtons({ delta, increment, decrement }) {
+export default function CounterButtons({ delta }) {
+  const { increment, decrement } = useContext(CountApiContext);
+
   return (
     <Container>
       <Button type="button" onClick={() => decrement(delta)}>

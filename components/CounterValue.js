@@ -1,3 +1,5 @@
+import { CountContext } from "@/lib/countContext";
+import { useContext } from "react";
 import styled from "styled-components";
 
 const Value = styled.p`
@@ -10,6 +12,8 @@ const Value = styled.p`
   border-radius: 50%;
 `;
 
-export default function CounterValue({ value }) {
+export default function CounterValue() {
+  const value = useContext(CountContext);
+
   return <Value>Value: {value}</Value>;
 }

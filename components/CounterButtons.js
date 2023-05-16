@@ -1,3 +1,4 @@
+import useStore from "@/lib/store";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -13,7 +14,10 @@ const Button = styled.button`
   color: white;
 `;
 
-export default function CounterButtons({ delta, increment, decrement }) {
+export default function CounterButtons({ delta }) {
+  const increment = useStore((state) => state.increment);
+  const decrement = useStore((state) => state.decrement);
+
   return (
     <Container>
       <Button type="button" onClick={() => decrement(delta)}>

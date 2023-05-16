@@ -1,3 +1,4 @@
+import useStore from "@/lib/store";
 import styled from "styled-components";
 
 const Value = styled.p`
@@ -10,6 +11,8 @@ const Value = styled.p`
   border-radius: 50%;
 `;
 
-export default function CounterValue({ value }) {
-  return <Value>Value: {value}</Value>;
+export default function CounterValue() {
+  const count = useStore((state) => state.count);
+
+  return <Value>Value: {count}</Value>;
 }

@@ -11,5 +11,5 @@ const Value = styled.p`
 `;
 
 export default function CounterValue({ value }) {
-  return <Value>Value: {value}</Value>;
+  return <Value data-cy="value">Value: {value}</Value>;
 }

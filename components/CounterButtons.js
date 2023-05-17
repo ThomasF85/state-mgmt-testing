@@ -19,7 +19,11 @@ export default function CounterButtons({ delta, increment, decrement }) {
       <Button type="button" onClick={() => decrement(delta)}>
         - {delta}
       </Button>
-      <Button type="button" onClick={() => increment(delta)}>
+      <Button
+        data-cy={`incbutton${delta}`}
+        type="button"
+        onClick={() => increment(delta)}
+      >
         + {delta}
       </Button>
     </Container>

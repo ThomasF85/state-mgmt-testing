@@ -1,4 +1,4 @@
-import useStore from "@/lib/store";
+import useStore from "@/lib/store/store";
 import styled from "styled-components";
 
 const Value = styled.p`
